@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Header() {
 	return (
-		<header className="flex flex-row items-center justify-between py-2 container">
+		<header className="flex flex-row items-center justify-between py-2 pt-4 container">
 			{/* <div className="flex-1" /> */}
 			<div />
 			<Image

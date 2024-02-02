@@ -1,7 +1,12 @@
 export default function Footer() {
 	return (
 		<footer className="container">
-			<div className="flex flex-row text-sm items-center justify-between bg-gray-900 rounded-md p-7 my-4">
+			<div className="flex flex-col text-sm items-center justify-center gap-4 p-7 my-4">
+				{/* Copyright */}
+				<p className="text-end">
+					<span className="font-semibold">Cine Corn</span> © 2024
+				</p>
+
 				{/* Credit API */}
 				<p className="text-start">
 					API by{" "}
@@ -13,10 +18,6 @@ export default function Footer() {
 					>
 						YTS
 					</a>
-				</p>
-				{/* Copyright */}
-				<p className="text-end">
-					© 2024 <span className="font-semibold">Cine Corn</span>
 				</p>
 			</div>
 		</footer>
