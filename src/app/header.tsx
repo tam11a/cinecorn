@@ -10,7 +10,8 @@ export default function Header() {
 				alt="Cine Corn"
 				width={120}
 				height={100}
-				className="pb-4"
+				className="pb-4 w-auto max-w-32"
+				priority
 			/>
 			<div />
 			{/* <div className="flex-1 flex flex-row items-center justify-end">

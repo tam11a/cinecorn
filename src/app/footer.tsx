@@ -1,7 +1,7 @@
 export default function Footer() {
 	return (
-		<footer className="container bg-gray-900 rounded-md py-7 my-4">
-			<div className="flex flex-row text-sm items-center justify-between">
+		<footer className="container">
+			<div className="flex flex-row text-sm items-center justify-between bg-gray-900 rounded-md p-7 my-4">
 				{/* Credit API */}
 				<p className="text-start">
 					API by{" "}

@@ -3,6 +3,7 @@ import { Jost } from "next/font/google";
 import "./globals.css";
 import Header from "./header";
 import Footer from "./footer";
+import ReactQueryProvider from "@/providers/ReactQueryProvider";
 
 const jost = Jost({
 	subsets: ["latin"],
@@ -22,7 +23,7 @@ export default function RootLayout({
 		<html lang="en">
 			<body className={`bg-gray-950 text-white ${jost.className}`}>
 				<Header />
-				{children}
+				<ReactQueryProvider>{children}</ReactQueryProvider>
 				<Footer />
 			</body>
 		</html>
