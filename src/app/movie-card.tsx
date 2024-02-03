@@ -44,7 +44,7 @@ const MovieCard = ({ data }: { data: MovieType }) => {
 			<HoverCardContent
 				align="center"
 				sideOffset={-40}
-				className="flex flex-row gap-3 p-2"
+				className="flex flex-row gap-3 p-2 w-fit"
 			>
 				<Image
 					src={data.medium_cover_image}
