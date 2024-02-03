@@ -21,7 +21,10 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={`dark bg-gray-950 text-white  ${jost.className}`}>
+			<body
+				suppressHydrationWarning={true}
+				className={`dark bg-gray-950 text-white  ${jost.className}`}
+			>
 				<Header />
 				<ReactQueryProvider>{children}</ReactQueryProvider>
 				<Footer />

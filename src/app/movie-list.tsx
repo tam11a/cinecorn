@@ -1,10 +1,14 @@
 "use client";
 
+import React from "react";
+
+// Hooks
 import useSearchMovies from "@/queries/movies/hooks";
-import { MovieType } from "@/lib/types/movie";
+
+// Components
 import MovieCard from "./movie-card";
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 // import {
 // 	Select,
 // 	SelectContent,
@@ -14,10 +18,15 @@ import { Button } from "@/components/ui/button";
 // 	SelectTrigger,
 // 	SelectValue,
 // } from "@/components/ui/select";
-import { FaFilter } from "react-icons/fa";
-import { RiSearchLine } from "react-icons/ri";
-import React from "react";
+
+// Types
 import { SearchParamsType } from "@/queries/movies/requests";
+import { MovieType } from "@/lib/types/movie";
+
+// Icons
+import { RiSearchLine } from "react-icons/ri";
+import { GoFilter } from "react-icons/go";
+import { MdClear } from "react-icons/md";
 
 function MovieList({ movies }: { movies: any }) {
 	const [filter, setFilter] = React.useState<SearchParamsType>({});
@@ -25,12 +34,16 @@ function MovieList({ movies }: { movies: any }) {
 	return (
 		<div>
 			<div className="bg-gray-900 mb-5 rounded-[6px] max-w-xl mx-auto  flex flex-row items-center px-2">
-				<button className="mx-4 text-xl">
+				<button className="ml-4 text-xl">
 					<RiSearchLine />
 				</button>
 				<Input
-					placeholder="Search Movies, Series.."
-					className="text-lg py-7 px-8 font-semibold  !border-none w-full shadow-none !ring-0 !outline-none"
+					placeholder="Search Movies.."
+					className="text-lg py-7 pr-8 font-semibold  !border-none w-full shadow-none !ring-0 !outline-none"
+					value={filter.query_term}
+					onChange={(e) => {
+						setFilter((filter) => ({ ...filter, query_term: e.target.value }));
+					}}
 				/>
 				{/* <Select>
 					<SelectTrigger className="w-[180px]">
@@ -47,9 +60,21 @@ function MovieList({ movies }: { movies: any }) {
 						</SelectGroup>
 					</SelectContent>
 				</Select> */}
-
+				{filter.query_term && (
+					<button
+						className="text-xl"
+						onClick={() =>
+							setFilter((filter) => ({
+								...filter,
+								query_term: "",
+							}))
+						}
+					>
+						<MdClear />
+					</button>
+				)}
 				<button className="mx-4 text-xl">
-					<FaFilter />
+					<GoFilter />
 				</button>
 			</div>
 			<div className="flex flex-row justify-center flex-wrap gap-2">
