@@ -44,7 +44,7 @@ const MovieCard = ({ data }: { data: MovieType }) => {
 			<HoverCardContent
 				align="center"
 				sideOffset={-40}
-				className="flex flex-row gap-3 p-2 w-fit"
+				className="flex flex-row gap-3 p-2 w-fit pr-4 max-w-[80vw]"
 			>
 				<Image
 					src={data.medium_cover_image}
@@ -58,11 +58,11 @@ const MovieCard = ({ data }: { data: MovieType }) => {
 					<h3 className="text-lg font-semibold">
 						{data.title} ({data.year})
 					</h3>
-					<p className="flex flex-row items-center gap-1 mt-1 flex-wrap">
+					<div className="flex flex-row items-center gap-1 mt-1 flex-wrap">
 						{data.genres.map((genre) => (
 							<Badge key={genre}>{genre}</Badge>
 						))}
-					</p>
+					</div>
 					<p className="flex flex-row items-center gap-2 px-1">
 						<FaStar className="text-orange-400" />
 						<span>{data.rating}</span>
