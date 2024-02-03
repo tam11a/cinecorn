@@ -16,7 +16,6 @@ import { FaLanguage } from "react-icons/fa6";
 import { MdOpenInNew } from "react-icons/md";
 
 const MovieCard = ({ data }: { data: MovieType }) => {
-	console.log(data);
 	return (
 		<HoverCard>
 			<HoverCardTrigger>
@@ -26,10 +25,10 @@ const MovieCard = ({ data }: { data: MovieType }) => {
 							src={data.medium_cover_image}
 							alt={data.title}
 							blurDataURL={data.small_cover_image}
-							width={250}
+							width={220}
 							height={125}
 							placeholder="blur"
-							className="rounded-md w-full"
+							className="rounded-md w-full max-w-[150px] sm:max-w-full"
 							loading="lazy"
 						/>
 						<div className="absolute top-0 left-0 h-full w-full p-2">

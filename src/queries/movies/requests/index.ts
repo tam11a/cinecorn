@@ -1,15 +1,15 @@
 import instance from "@/lib/instance";
 
 export type SearchParamsType = {
-	limit?: number;
-	page?: number;
+	limit?: number | string;
+	page?: number | string;
 	quality?: string;
-	minimum_rating?: number;
+	minimum_rating?: number | string;
 	query_term?: string;
 	genre?: string;
 	sort_by?: string;
 	order_by?: string;
-	with_rt_ratings?: boolean;
+	with_rt_ratings?: boolean | string;
 };
 
 export async function getMovies(params?: SearchParamsType) {
